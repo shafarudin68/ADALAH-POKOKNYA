@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Elsa Mega Safitri 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Dancing+Script:wght@700&display=swap');
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#492650,#171126 65%);color:white;font-family:Poppins,sans-serif;text-align:center}
+main{width:min(600px,92%);margin:auto;padding:40px 0 60px}
+.page{display:none;animation:show .6s ease}
+.page.active{display:block}
+@keyframes show{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+h1{font-size:clamp(34px,9vw,58px);line-height:1.2;background:linear-gradient(90deg,#fff,#ff9fc8,#c6a6ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+h2{color:#ffb4d2;font-family:'Dancing Script',cursive;font-size:36px}
+p{line-height:1.9;color:#f1e4f6}
+.big{font-size:85px;margin:22px}
+.small{font-size:12px;color:#bca9c9}
+.card{background:#ffffff0d;border:1px solid #ffffff24;border-radius:24px;padding:25px;margin:22px 0}
+input{width:100%;padding:14px;border:1px solid #ffafd0;border-radius:14px;background:#ffffff12;color:white;font-size:16px;text-align:center;margin:12px 0}
+input::placeholder{color:#cdbbd6}
+button{border:0;border-radius:30px;padding:13px 21px;margin:7px;background:linear-gradient(100deg,#ffb1d0,#d2b5ff);color:#29172f;font-weight:800;font-size:14px;cursor:pointer}
+button:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.secondary{background:#ffffff12;color:white;border:1px solid #ffffff30}
+#message{color:#ffb1d0;min-height:24px;font-size:13px}
+.heart{position:fixed;bottom:-40px;pointer-events:none;animation:up 4s linear forwards;z-index:5}
+@keyframes up{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+footer{font-size:11px;color:#ad9cbb;margin-top:35px}
+</style>
+</head>
+<body>
+<main>
+
+<!-- HALAMAN KUNCI -->
+<section class="page active" id="lock">
+<div class="big">🔐💌</div>
+<p class="small">TOP SECRET · KHUSUS UNTUK SATU ORANG</p>
+<h1>Halo, Sayang!</h1>
+<p>Ada hadiah kecil dari seseorang nih... 🤭</p>
+<div class="card">
+<h2>Masukkan kode rahasia</h2>
+<p>Petunjuk: nama kamu + angka 251125 😝</p>
+<input id="code" placeholder="Masukkan kode..." autocomplete="off">
+<button onclick="unlock()">Buka Rahasia 💗</button>
+<p id="message"></p>
+</div>
+<p class="small">Kalau kamu bukan Elsa, berarti kamu nyasar WKWKWK 😂</p>
+</section>
+
+<!-- HALAMAN UTAMA -->
+<section class="page" id="home">
+<div class="small">✦ A LITTLE SURPRISE FOR YOU ✦</div>
+<h1>Happy Birthday!</h1>
+<h2>Elsa Mega Safitri ♡</h2>
+<div class="big">🎂🎀🧸</div>
+<p>Hari ini tokoh utama di cerita ini adalah sayang!</p>
+<div class="card">
+<h2>Misi pertama: jawab dulu! 😈</h2>
+<p>Kalau sayang ulang tahun, siapa yang harus paling bahagia?</p>
+<button onclick="answer(false)">Abang 😎</button>
+<button onclick="answer(true)">sayang dong! 💗</button>
+<p id="answer"></p>
+</div>
+<button onclick="go('letter')">Buka Surat dari Shafar 💌</button>
+<button class="secondary" onclick="go('cake')">Lanjut ke kue 🎂</button>
+</section>
+
+<!-- SURAT -->
+<section class="page" id="letter">
+<div class="big">💌</div>
+<h1>Dear Elsa...</h1>
+<div class="card">
+<h2>Untuk Elsa Mega Safitri ♡</h2>
+<p>
+Selamat ulang tahun yaa, sayang! 🎂💗<br><br>
+Semoga di umur yang baru ini Sayang selalu sehat,
+diberi banyak kebahagiaan, dan dimudahkan dalam
+setiap langkah yang Sayang ambil.<br><br>
+Semoga semua mimpi yang Sayang simpan pelan-pelan
+menjadi nyata. Kalau ada hari yang melelahkan,
+jangan lupa Sayang juga berhak istirahat dan bahagia.<br><br>
+Abang bikin halaman ini bukan karena abang jago merangkai
+kata, tapi karena abang hari spesialmu. Hehe. 🙈<br><br>
+Semoga saat membaca ini Sayang tersenyum.
+Kalau iya, berarti misi Abang berhasil! 😎💗<br><br>
+Pokoknya, semoga tahun ini membawa lebih banyak
+cerita indah, tawa, kesempatan, dan hal baik untuk sayang.
+Jangan lupa bahagia, my princess!
+</p>
+<h2>With love, Shafar 💗</h2>
+</div>
+<button onclick="go('cake')">Ada hadiah lagi! 🎁</button>
+</section>
+
+<!-- KUE -->
+<section class="page" id="cake">
+<h1>Make a wish! ✨</h1>
+<div class="big" id="cakeEmoji">🎂</div>
+<p>Pejamkan mata sebentar, Sayang. Bayangkan satu doa terbaikmu! 🥹</p>
+<button onclick="blow()">Tiup lilinnya! 🌬️</button>
+<p id="blowText"></p>
+<button class="secondary" onclick="go('quiz')">Mini game terakhir 😈</button>
+</section>
+
+<!-- MINI GAME -->
+<section class="page" id="quiz">
+<div class="big">🤔💘</div>
+<h1>Pertanyaan terakhir!</h1>
+<div class="card">
+<p>Siapa yang rela bikin web panjang demi ucapan ulang tahun Sayang? 😂</p>
+<button onclick="wrong()">Sayang sendiri 😭</button>
+<button onclick="right()">Shafar dong! 💗</button>
+<p id="quizText"></p>
+</div>
+<button id="finalBtn" style="display:none" onclick="go('final')">Buka kejutan terakhir 🎁</button>
+</section>
+
+<!-- PENUTUP -->
+<section class="page" id="final">
+<div class="big">💖🌷✨</div>
+<h1>For You, Sayang</h1>
+<div class="card">
+<h2>One last thing...</h2>
+<p>
+Selamat bertambah usia, Elsa Mega Safitri! 💗<br><br>
+Semoga Sayang punya banyak alasan untuk tersenyum,
+banyak orang baik yang menemani sayang baik itu arin 
+syahi atau yang lain, dan keberanian
+untuk mengejar apa yang sayang impikan.<br><br>
+Terima kasih sudah meluangkan waktu membuka hadiah
+kecil dari abang, terima kasih sudah menjadi
+ecaaa yang abang kenal sampai sekrang
+terima kasih sudah menemani abang, terima kasih untuk semuanya 
+abang bakal selalu ada di setiap ulang tahun sayang 
+dari sekrang sampai selamanya. Semoga hari ulang tahun sayang
+menjadi salah satu kenangan yang menyenangkan.<br><br>
+Jangan lupa gacoan yaaa... WKWKWK 😭🎂
+</p>
+<h2>Happy Birthday, Sayang! ♡</h2>
+<p>— Shafar</p>
+</div>
+<button onclick="celebrate()">Rayakan sekali lagi! 🎉</button>
+</section>
+
+<footer>Made with ♡ by Shafar · Specially for Princes</footer>
+</main>
+
+<script>
+// Ganti kode rahasia di sini.
+// Kode ini hanya gerbang sederhana, bukan keamanan sungguhan.
+const SECRET = "ShaCa251125";
+
+function unlock(){
+  const entered=document.getElementById("code").value.trim();
+  if(entered.toUpperCase()===SECRET){
+    go("home");
+    celebrate();
+  }else{
+    document.getElementById("message").textContent=
+      "Eits, masak calah cih, ayo coba agi 🤭";
+  }
+}
+document.getElementById("code").addEventListener("keydown",e=>{
+  if(e.key==="Enter") unlock();
+});
+
+function go(id){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function answer(correct){
+  document.getElementById("answer").textContent=correct
+  ?"BETULLL! Hari ini Sayang pemeran utamanya! 👑💗"
+  :"WKWKWK Abang boleh bahagia, tapi Sayang yang ulang tahun! 😂";
+  if(correct) celebrate(12);
+}
+
+function blow(){
+  document.getElementById("cakeEmoji").textContent="🍰✨";
+  document.getElementById("blowText").textContent=
+    "Yeyyy! Semoga doa terbaikmu menemukan jalannya. 💗";
+  celebrate(35);
+}
+
+function wrong(){
+  document.getElementById("quizText").textContent=
+    "LAH, terus siapa yang ngetik kodenya? WKWKWK 😭";
+}
+
+function right(){
+  document.getElementById("quizText").textContent=
+    "BETUL! ABANG resmi lulus jadi pembuat kejutan. 🏆💗";
+  document.getElementById("finalBtn").style.display="inline-block";
+  celebrate(25);
+}
+
+function celebrate(amount=35){
+  const emojis=["💗","💕","💖","✨","🌸","🎉"];
+  for(let i=0;i<amount;i++){
+    const el=document.createElement("span");
+    el.className="heart";
+    el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left=Math.random()*100+"vw";
+    el.style.fontSize=(18+Math.random()*20)+"px";
+    el.style.animationDuration=(3+Math.random()*3)+"s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),6500);
+  }
+}
+</script>
+</body>
+</html>
